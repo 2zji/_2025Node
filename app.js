@@ -6,9 +6,11 @@ const server = http.createServer((req, res) => {
   // 응답 헤더 설정
   res.writeHead(200, { 'Content-Type': 'text/plain' });
   
+  //리우팅 설정
+  app.post('/swag', (req, res) => (
   // 응답 내용 작성
-  res.end('Hello, World!\n');
-});
+  res.send(reg.body);
+));
 
 // 서버가 실행될 포트 번호 설정
 const PORT = 3000;
